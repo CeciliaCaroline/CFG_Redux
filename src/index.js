@@ -10,9 +10,11 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const Routing = () => {
-  return(
+  return (
     <Router>
       <div>
         <nav>
@@ -27,8 +29,8 @@ const Routing = () => {
         </nav>
 
         <Routes>
-          <Route path="/" index element = {<App />} />
-          <Route path="/about" element = {<About />} />
+          <Route path="/" index element={<App />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
@@ -37,7 +39,9 @@ const Routing = () => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routing />
+    <Provider store={store}>
+      <Routing />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

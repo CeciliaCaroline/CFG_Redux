@@ -1,41 +1,32 @@
 import './IncrementButton.css';
 import React from "react"
+import { useSelector, useDispatch } from 'react-redux';
 
-class IncrementButton extends React.Component {
-  constructor(props) {
-    super(props);
+const IncrementButton = () => {
+  let counterValue = useSelector(state => state.counterValue)
+  const dispatch = useDispatch();
 
-    this.state = {counterValue: 0};
+  console.log("STATE", counterValue)
 
-    this.whenButtonPressed = this.whenButtonPressed.bind(this);
+
+  const whenButtonPressed = () => {
+    // this.setState({
+    //   counterValue: this.state.counterValue + 1
+    // });
+    dispatch({ type: "INCREMENT" })
   }
 
-  whenButtonPressed() {
-    this.setState({
-      counterValue: this.state.counterValue + 1
-    });
-  }
 
-  componentDidMount(){
-    console.log("The component now successfully exists!")
-  }
-
-  componentDidUpdate(){
-    console.log("The new value is: " + this.state.counterValue)
-  }
-
-  render() {
-    return (
-      <>
-        <button
-          className="incrementButton"
-          onClick = {this.whenButtonPressed}
-        >
-          {this.state.counterValue}
-        </button>
-      </>
-    );
-  }
+  return (
+    <>
+      <button
+        className="incrementButton"
+        onClick={whenButtonPressed}
+      >
+        {counterValue}
+      </button>
+    </>
+  );
 }
 
 export default IncrementButton;

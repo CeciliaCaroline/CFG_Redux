@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+Array [
+  <button
+    className="duneButton"
+    onClick={[Function]}
+  >
+    Output Dune messageundefined
+  </button>,
+  <h1>
+    N/A
+  </h1>,
+]
+`;

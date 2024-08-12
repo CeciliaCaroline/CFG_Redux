@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from './Button.js'
+import Button from './Button/Button.js'
 import IncrementButton from './IncrementButton.js'
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
         <p>Rules of book reading are fairly self-explanatory</p>
 
         <Button
-          buttonText = "Output Dune message"
-          appendMessage = ". They're great!"
+          buttonText="123"
+          appendMessage=". They're great!"
         />
         <IncrementButton />
 

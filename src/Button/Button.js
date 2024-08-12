@@ -1,5 +1,5 @@
 import './Button.css';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Button(props) {
   const [currMessage, setCurrMessage] = useState("N/A");
@@ -8,7 +8,7 @@ function Button(props) {
   function whenButtonPressed() {
     setCurrMessageIndexSelector(currMessageIndexSelector + 1);
 
-    if (currMessageIndexSelector == 2){
+    if (currMessageIndexSelector === 2) {
       setCurrMessageIndexSelector(0);
     }
   }
@@ -31,7 +31,7 @@ function Button(props) {
     <>
       <button
         className="duneButton"
-        onClick = {whenButtonPressed}
+        onClick={whenButtonPressed}
       >
         {props.buttonText + props.appendMessage}
       </button>
